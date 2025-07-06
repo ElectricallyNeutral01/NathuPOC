@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathu and Sons Jewellers - Since 1932</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcfb;
+            overflow-x: hidden; /* Prevent horizontal scrollbar from animations */
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            position: relative;
+            height: calc(100vh - 80px);
+            min-height: 500px;
+            overflow: hidden;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #c89d66;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-playfair font-bold text-gray-900">Nathu & Sons</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium">About Us</a>
+                    <a href="#collections" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Collections</a>
+                    <a href="#bestsellers" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Bestsellers</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Contact</a>
+                </nav>
+
+                <!-- Header Icons -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                        <i data-lucide="search" class="w-6 h-6"></i>
+                    </button>
+                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                    </button>
+                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    </button>
+                     <button class="text-gray-500 hover:text-gray-800 md:hidden" id="mobile-menu-button">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About Us</a>
+                <a href="#collections" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Collections</a>
+                <a href="#bestsellers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Bestsellers</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Video -->
+        <section class="hero-section text-white">
+            <video autoplay loop muted playsinline id="hero-video">
+                <!-- Using a placeholder video URL. Replace with a high-quality stock video. -->
+                <source src="https://assets.mixkit.co/videos/50791/50791-720.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="bg-black bg-opacity-50 h-full">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center h-full">
+                    <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4 leading-tight" data-aos="fade-up" data-aos-delay="200">A Legacy of Trust & Craftsmanship</h1>
+                    <p class="text-lg md:text-xl max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="400">Discover timeless elegance with our exquisite collections, handcrafted for generations since 1932.</p>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                      <a href="#collections" class="bg-[#c89d66] hover:bg-[#b58c58] text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                          Explore Collections
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Category Section -->
+        <section id="collections" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-900">Shop by Category</h2>
+                    <p class="mt-4 text-lg text-gray-600">Find the perfect piece for every occasion.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Category Card 1: Rings -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/600x800/e2e8f0/333333?text=Rings" alt="Diamond Rings" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-playfair font-bold text-white">Rings</h3>
+                            <a href="#" class="text-white font-semibold mt-2 inline-block hover:text-[#c89d66] transition-colors">Shop Now &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Category Card 2: Necklaces -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/600x800/d4af37/ffffff?text=Necklaces" alt="Gold Necklaces" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-playfair font-bold text-white">Necklaces</h3>
+                            <a href="#" class="text-white font-semibold mt-2 inline-block hover:text-[#c89d66] transition-colors">Shop Now &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Category Card 3: Earrings -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/600x800/b0c4de/333333?text=Earrings" alt="Elegant Earrings" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-playfair font-bold text-white">Earrings</h3>
+                            <a href="#" class="text-white font-semibold mt-2 inline-block hover:text-[#c89d66] transition-colors">Shop Now &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Category Card 4: Bracelets -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://placehold.co/600x800/c0c0c0/333333?text=Bracelets" alt="Silver Bracelets" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-playfair font-bold text-white">Bracelets</h3>
+                            <a href="#" class="text-white font-semibold mt-2 inline-block hover:text-[#c89d66] transition-colors">Shop Now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1" data-aos="fade-right">
+                        <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-900">Our Legacy Since 1932</h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">Nathu & Sons Jewellers is an establishment that has been adorning its customers with beautiful jewellery since 1932. We are a brand that has been built on trust, and our legacy has been passed down through three generations of our family.</p>
+                        <p class="mt-4 text-lg text-gray-600 leading-relaxed">Our commitment to purity, craftsmanship, and customer satisfaction has made us a household name, cherished by patrons who value quality and heritage.</p>
+                        <a href="#" class="mt-8 inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Learn More</a>
+                    </div>
+                    <div class="order-1 md:order-2" data-aos="fade-left">
+                        <img src="https://placehold.co/800x600/f7fafc/333333?text=Our+Storefront" alt="Nathu and Sons Storefront" class="rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bestsellers Section -->
+        <section id="bestsellers" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-900">Our Bestsellers</h2>
+                    <p class="mt-4 text-lg text-gray-600">Handpicked designs loved by our customers.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="group" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="relative overflow-hidden rounded-lg bg-gray-100">
+                            <img src="https://placehold.co/600x600/fde68a/333333?text=Product+1" alt="Bestseller 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 right-0 m-2">
+                                <button class="p-2 bg-white/70 rounded-full text-gray-600 hover:text-red-500 hover:bg-white transition">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h3 class="text-lg font-medium text-gray-800">Ornate Gold Necklace</h3>
+                            <p class="mt-1 text-gray-500">22k Gold</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="group" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="relative overflow-hidden rounded-lg bg-gray-100">
+                            <img src="https://placehold.co/600x600/e5e7eb/333333?text=Product+2" alt="Bestseller 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 right-0 m-2">
+                                <button class="p-2 bg-white/70 rounded-full text-gray-600 hover:text-red-500 hover:bg-white transition">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h3 class="text-lg font-medium text-gray-800">Solitaire Diamond Ring</h3>
+                            <p class="mt-1 text-gray-500">18k White Gold</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="group" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="relative overflow-hidden rounded-lg bg-gray-100">
+                            <img src="https://placehold.co/600x600/fef3c7/333333?text=Product+3" alt="Bestseller 3" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 right-0 m-2">
+                                <button class="p-2 bg-white/70 rounded-full text-gray-600 hover:text-red-500 hover:bg-white transition">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h3 class="text-lg font-medium text-gray-800">Antique Jhumkas</h3>
+                            <p class="mt-1 text-gray-500">Temple Jewellery</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="group" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="relative overflow-hidden rounded-lg bg-gray-100">
+                            <img src="https://placehold.co/600x600/d1d5db/333333?text=Product+4" alt="Bestseller 4" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 right-0 m-2">
+                                <button class="p-2 bg-white/70 rounded-full text-gray-600 hover:text-red-500 hover:bg-white transition">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h3 class="text-lg font-medium text-gray-800">Men's Silver Chain</h3>
+                            <p class="mt-1 text-gray-500">925 Sterling Silver</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-playfair font-bold mb-4">Nathu & Sons</h3>
+                    <p class="text-gray-400">A tradition of excellence in jewellery since 1932. Crafting memories for generations.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#collections" class="text-gray-400 hover:text-white transition">Collections</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Collections -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Collections</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gold</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Diamond</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Silver</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gemstones</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Us</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>11A, Govind Bhawan, Main Road, Rourkela- 769001, Odisha</span>
+                        </p>
+                        <p class="mt-2 flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                            <a href="tel:+919437041732" class="hover:text-white transition">+91 9437041732</a>
+                        </p>
+                        <p class="mt-2 flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                            <a href="mailto:info@nathuandsons.in" class="hover:text-white transition">info@nathuandsons.in</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 Nathu and Sons Jewellers. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: false, // whether animation should happen only once - while scrolling down
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
