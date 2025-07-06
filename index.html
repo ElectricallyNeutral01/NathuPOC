@@ -57,12 +57,20 @@
             }
         }
 
+        /* Hero Section Responsive Height */
         .hero-section {
             position: relative;
-            height: calc(100vh - 80px);
+            height: 80vh; /* Mobile height */
             min-height: 500px;
+            max-height: 900px;
             overflow: hidden;
         }
+        @media (min-width: 768px) {
+            .hero-section {
+                height: calc(100vh - 80px); /* Desktop height */
+            }
+        }
+
         #hero-video {
             position: absolute;
             top: 50%;
@@ -73,7 +81,7 @@
             height: auto;
             z-index: -100;
             transform: translateX(-50%) translateY(-50%);
-            background-size: cover;
+            object-fit: cover;
         }
         .nav-link {
             position: relative;
@@ -108,7 +116,9 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-3xl font-playfair font-bold text-gray-900">Nathu & Sons</a>
+                    <a href="#">
+                        <img src="https://nathuandsons.in/wp-content/uploads/2023/06/NathuSonsLogo-1-1-copy.png" alt="Nathu & Sons Logo" class="h-12 w-auto">
+                    </a>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -121,17 +131,17 @@
                 </nav>
 
                 <!-- Header Icons -->
-                <div class="flex items-center space-x-4">
-                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button class="p-2 text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
                         <i data-lucide="search" class="w-6 h-6"></i>
                     </button>
-                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                    <button class="p-2 text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
                         <i data-lucide="heart" class="w-6 h-6"></i>
                     </button>
-                    <button class="text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
+                    <button class="p-2 text-gray-500 hover:text-gray-800 transform hover:scale-110 transition-transform">
                         <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                     </button>
-                     <button class="text-gray-500 hover:text-gray-800 md:hidden" id="mobile-menu-button">
+                     <button class="p-2 text-gray-500 hover:text-gray-800 md:hidden" id="mobile-menu-button">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -139,7 +149,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
+        <div id="mobile-menu" class="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
             <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About Us</a>
@@ -153,15 +163,14 @@
     <main>
         <!-- Hero Section with Video -->
         <section class="hero-section text-white">
-            <video autoplay loop muted playsinline id="hero-video">
-                <!-- Using a placeholder video URL. Replace with a high-quality stock video. -->
+            <video autoplay loop muted playsinline id="hero-video" poster="https://placehold.co/1920x1080/2d3748/ffffff?text=Loading+Video...">
                 <source src="https://assets.mixkit.co/videos/50791/50791-720.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="bg-black bg-opacity-50 h-full">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center h-full">
-                    <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4 leading-tight" data-aos="fade-up" data-aos-delay="200">A Legacy of Trust & Craftsmanship</h1>
-                    <p class="text-lg md:text-xl max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="400">Discover timeless elegance with our exquisite collections, handcrafted for generations since 1932.</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-4 leading-tight" data-aos="fade-up" data-aos-delay="200">A Legacy of Trust & Craftsmanship</h1>
+                    <p class="text-base sm:text-lg lg:text-xl max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="400">Discover timeless elegance with our exquisite collections, handcrafted for generations since 1932.</p>
                     <div data-aos="fade-up" data-aos-delay="600">
                       <a href="#collections" class="bg-[#c89d66] hover:bg-[#b58c58] text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
                           Explore Collections
@@ -178,7 +187,7 @@
                     <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-900">Shop by Category</h2>
                     <p class="mt-4 text-lg text-gray-600">Find the perfect piece for every occasion.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Category Card 1: Rings -->
                     <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://placehold.co/600x800/e2e8f0/333333?text=Rings" alt="Diamond Rings" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
@@ -243,7 +252,7 @@
                     <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-900">Our Bestsellers</h2>
                     <p class="mt-4 text-lg text-gray-600">Handpicked designs loved by our customers.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Product Card 1 -->
                     <div class="group" data-aos="zoom-in" data-aos-delay="100">
                         <div class="relative overflow-hidden rounded-lg bg-gray-100">
@@ -312,9 +321,9 @@
     <!-- Footer -->
     <footer id="contact" class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
                 <!-- About -->
-                <div class="col-span-1 md:col-span-1">
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
                     <h3 class="text-2xl font-playfair font-bold mb-4">Nathu & Sons</h3>
                     <p class="text-gray-400">A tradition of excellence in jewellery since 1932. Crafting memories for generations.</p>
                 </div>
@@ -373,10 +382,9 @@
         // Preloader logic
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
-            // Add a minimum display time for the preloader (e.g., 1 second)
             setTimeout(() => {
                 preloader.classList.add('hidden');
-            }, 1000);
+            }, 500); // Reduced delay for faster perceived load time
         });
 
         // Initialize Lucide icons
@@ -384,8 +392,8 @@
 
         // Initialize AOS (Animate on Scroll)
         AOS.init({
-            duration: 800, // values from 0 to 3000, with step 50ms
-            once: false, // whether animation should happen only once - while scrolling down
+            duration: 800,
+            once: true, // Animation happens only once
         });
 
         // Mobile menu toggle
@@ -393,7 +401,13 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('max-h-0')) {
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-96', 'opacity-100');
+            } else {
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                mobileMenu.classList.remove('max-h-96', 'opacity-100');
+            }
         });
     </script>
 </body>
